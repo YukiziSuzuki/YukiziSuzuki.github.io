@@ -14,7 +14,7 @@
  <script>
   var init = function() {
 
-    var width = 800,
+    var width = 300,
         height = 600;
   
     // レンダラーを作成
@@ -46,7 +46,7 @@
       requestAnimationFrame(update);
   
       // 箱を回転させる
-      box.rotation.x += 10;
+      box.rotation.x += 0.01;
       box.rotation.y += 0.01;
   
       renderer.render(scene, camera);
