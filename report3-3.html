@@ -33,6 +33,11 @@ var textureLoader = new THREE.TextureLoader();
 var texture = textureLoader.load("take.jpg");
 var mat = new THREE.MeshPhongMaterial();
 mat.map = texture;
+    
+// バンプマップ読み込み
+var bump = textureLoader.load("take.jpg");
+mat.bumpMap = bump;
+mat.bumpscale = 0.2;
 
 // 長方形を作成
  var geometry = new THREE.PlaneGeometry( 2, 4, 3 );
