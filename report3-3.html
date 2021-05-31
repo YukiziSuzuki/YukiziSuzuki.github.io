@@ -40,9 +40,14 @@ mat.map = texture;
 //var plane = new THREE.Mesh(geometry, material);
 var plane = new THREE.Mesh(geometry, mat);
 plane.position.z = -9;
-plane.rotation.z = 1.57;
+plane.position.x = -0.5;
 scene.add(plane);
 
+var plane4 = new THREE.Mesh(geometry, mat);
+plane4.position.z = -9;
+plane.positon.x = 0.5;
+scene.add(plane4);    
+    
 //var plane1 = new  THREE.Mesh(geometry, material);
 var plane1 = new THREE.Mesh(geometry, mat);
 plane1.position.z = -8;
