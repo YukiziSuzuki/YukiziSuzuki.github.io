@@ -30,13 +30,21 @@
 
 // テクスチャー読み込み
 var textureLoader = new THREE.TextureLoader();
-var texture_water = textureLoader.load("water_00013.jpg");
+var texture_water = textureLoader.load("water_00029.jpg");
 var mat_water = new THREE.MeshPhongMaterial();
 mat_water.map = texture_water;
+
+var bump_water = textureLoader.load("water_00029.jpg");
+mat_water.bumpMap = bump_water;
+mat_water.bumpscale = 0.2;
 
 var texture_stone = textureLoader.load("stone_00002.jpg");
 var mat_stone = new THREE.MeshPhongMaterial();
 mat_stone.map = texture_stone;
+
+var bump_stone = textureLoader.load("stone_00002.jpg");
+mat_stone.bumpMap = bump_stone;
+mat_stone.bumpscale = 0.2;
 
 
 
