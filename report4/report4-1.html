@@ -86,28 +86,14 @@ var directionalLight3 = new THREE.DirectionalLight(0xffffff);
 directionalLight3.position.set(1, -10, 1);
 // シーンに追加
 scene.add(directionalLight3);
-
-// 初回実行
-var update = function() {
-  requestAnimationFrame(update);
-
-  // 箱を回転させる
-  //plane.rotation.x += 0.01;
-  //plane.rotation.y += 0.01;
-
-  renderer.render(scene, camera);
-};
-update();
-}
-  window.addEventListener('DOMContentLoaded', init);
    
-   tick();
+tick();
 
-   // 毎フレーム時に実行されるループイベントです
-   function tick() {
-   // レンダリング
-   renderer.render(scene, camera);
-   requestAnimationFrame(tick);
+// 毎フレーム時に実行されるループイベントです
+function tick() {
+// レンダリング
+renderer.render(scene, camera);
+requestAnimationFrame(tick);
         }
       }
    
