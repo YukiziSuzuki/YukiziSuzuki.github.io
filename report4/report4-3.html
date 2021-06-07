@@ -23,6 +23,11 @@
 
     // カメラを作成
     var camera = new THREE.PerspectiveCamera(45, width / height, 1, 1000);
+    // カメラの初期座標を設定
+        camera.position.set(0, 0, 1000);
+
+        // カメラコントローラーを作成
+        const controls = new THREE.OrbitControls(camera,document.body);
 
     // 球を作成
     var sphereGeometry = new THREE.SphereGeometry(0.2, 32, 32);
