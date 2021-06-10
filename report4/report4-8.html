@@ -53,7 +53,7 @@
         //mat_suna.bumpMap = bump_suna;
         //mat_suna.bumpscale = 0.2;
 
-        var planeGeometry1 = new THREE.PlaneGeometry( 2000, 2000, 2000);
+        var planeGeometry1 = new THREE.PlaneGeometry( 200, 200, 200);
 
         var plane0 = new THREE.Mesh(planeGeometry1, mat_suna);
         plane0.rotation.x=-1.5;
@@ -69,7 +69,7 @@
         sprite0.position.x = 0;
         sprite0.position.y = 0;
         sprite0.position.z = 0;
-        sprite0.scale.set(100,100,100);
+        sprite0.scale.set(10,10,10);
         scene.add(sprite0);
 
         // 木1をスプライトで作成
@@ -77,8 +77,8 @@
         const material1 = new THREE.SpriteMaterial({ map: texture1,});
 
         const sprite1 = new THREE.Sprite(material1);
-        sprite1.position.x=200;
-        sprite1.scale.set(100,100,100);
+        sprite1.position.x=10;
+        sprite1.scale.set(10,10,10);
         scene.add(sprite1);
 
 
