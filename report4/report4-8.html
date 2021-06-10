@@ -45,7 +45,7 @@
 
         // テクスチャー読み込み
         var textureLoader = new THREE.TextureLoader();
-        var texture_suna = textureLoader.load("../texture/suna_1.jpg");
+        var texture_suna = textureLoader.load("../texture/suna_2.jpg");
         var mat_suna = new THREE.MeshPhongMaterial();
         mat_suna.map = texture_suna;
 
@@ -57,6 +57,7 @@
 
         var plane0 = new THREE.Mesh(planeGeometry1, mat_suna);
         plane0.rotation.x=-1.5;
+        plane0.position.y=-10;
         scene.add(plane0);
 
 
