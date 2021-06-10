@@ -53,7 +53,7 @@
         //mat_suna.bumpMap = bump_suna;
         //mat_suna.bumpscale = 0.2;
 
-        var planeGeometry1 = new THREE.PlaneGeometry( 20, 20, 20);
+        var planeGeometry1 = new THREE.PlaneGeometry( 2000, 2000, 2000);
 
         var plane0 = new THREE.Mesh(planeGeometry1, mat_suna);
         plane0.rotation.x=-1.5;
@@ -77,7 +77,7 @@
         const material1 = new THREE.SpriteMaterial({ map: texture1,});
 
         const sprite1 = new THREE.Sprite(material1);
-        sprite1.position.x=2;
+        sprite1.position.x=200;
         sprite1.scale.set(100,100,100);
         scene.add(sprite1);
 
