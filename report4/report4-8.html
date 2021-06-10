@@ -49,14 +49,14 @@
         var mat_suna = new THREE.MeshPhongMaterial();
         mat_suna.map = texture_suna;
 
-        var bump_suna = textureLoader.load("../texture/suna_1.jpg");
-        mat_suna.bumpMap = bump_suna;
-        mat_suna.bumpscale = 0.2;
+        //var bump_suna = textureLoader.load("../texture/suna_1.jpg");
+        //mat_suna.bumpMap = bump_suna;
+        //mat_suna.bumpscale = 0.2;
 
         var planeGeometry1 = new THREE.PlaneGeometry( 20, 20, 20);
 
         var plane0 = new THREE.Mesh(planeGeometry1, mat_suna);
-        //plane0.position.y=3;
+        plane0.rotation.x=-1.5;
         scene.add(plane0);
 
 
@@ -66,6 +66,10 @@
         const material0 = new THREE.SpriteMaterial({ map: texture0,});
 
         const sprite0 = new THREE.Sprite(material0);
+        sprite0.position.x = 0;
+        sprite0.position.y = 0;
+        sprite0.position.z = 0;
+        sprite0.scale.set(100,100,100);
         scene.add(sprite0);
 
         // 木1をスプライトで作成
@@ -74,6 +78,7 @@
 
         const sprite1 = new THREE.Sprite(material1);
         sprite1.position.x=2;
+        sprite1.scale.set(100,100,100);
         scene.add(sprite1);
 
 
