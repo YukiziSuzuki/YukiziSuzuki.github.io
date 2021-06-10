@@ -43,16 +43,26 @@
         // シーンに追加
         scene.add(directionalLight2);
 
-        // helper
-      const gridHelper = new THREE.GridHelper(200,50); // size, step
-      scene.add(gridHelper);
+        // テクスチャー読み込み
+        var textureLoader = new THREE.TextureLoader();
+        var texture_suna = textureLoader.load("../texture/suna_1.jpg");
+        var mat_suna = new THREE.MeshPhongMaterial();
+        mat_suna.map = texture_suna;
 
-      const axisHelper = new THREE.AxisHelper(200,50);
-      scene.add(axisHelper);
+        var bump_suna = textureLoader.load("../texture/suna_1.jpg");
+        mat_suna.bumpMap = bump_suna;
+        mat_suna.bumpscale = 0.2;
+
+        var planeGeometry1 = new THREE.PlaneGeometry( 20, 20, 20);
+
+        var plane0 = new THREE.Mesh(planeGeometry1, mat_suna);
+        //plane0.position.y=3;
+        scene.add(plane0);
+
 
         // 木0をスプライトで作成
         var textureLoader = new THREE.TextureLoader();
-        var texture0 = textureLoader.load("../texture/kouen_1.png");
+        var texture0 = textureLoader.load("../texture/kouen_1.jpg");
         const material0 = new THREE.SpriteMaterial({ map: texture0,});
 
         const sprite0 = new THREE.Sprite(material0);
@@ -63,7 +73,7 @@
         scene.add(sprite0);
 
         // 木1をスプライトで作成
-        var texture1 = textureLoader.load("../texture/kouen_2.png");
+        var texture1 = textureLoader.load("../texture/kouen_2.jpg");
         const material1 = new THREE.SpriteMaterial({ map: texture1,});
 
         const sprite1 = new THREE.Sprite(material1);
