@@ -1,0 +1,97 @@
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=dnCALgbtSA-wh8Mnd9g4LjlzHmaM7XlblG7nZ11JQTXZFO73jOSZWtg9vEXoeTWOT0GugVvjJ5O9u0fFq0WoB-QBs5y7nJCTaU7RhOLBfEjVWi9RwAor8DjescdFPamE" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="https://gc.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly95dWtpemlzdXp1a2kuZ2l0aHViLmlvLzIwMjFDRy1tYWluL2xlc3NvbjQvc2FtcGxlOC01Lmh0bWw"/><script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.min.js"></script>
+    <script src="OrbitControls.js"></script>
+    <script>
+      // ページの読み込みを待つ
+      window.addEventListener('load', init);
+
+      function init() {
+        // サイズを指定
+        const width = 960;
+        const height = 540;
+
+        // レンダラーを作成
+        const renderer = new THREE.WebGLRenderer({
+          canvas: document.querySelector('#myCanvas')
+        });
+        renderer.setSize(width, height);
+        // 背景の色を設定
+        renderer.setClearColor(0xeeeeff);
+
+        // シーンを作成
+        const scene = new THREE.Scene();
+
+        // カメラを作成
+        const camera = new THREE.PerspectiveCamera(45, width / height);
+        // カメラの初期座標を設定
+        camera.position.set(0, 0, 1000);
+
+        // カメラコントローラーを作成
+        const controls = new THREE.OrbitControls(camera,document.body);
+
+        // 平行光源1
+        var directionalLight1 = new THREE.DirectionalLight(0xffffff);
+        directionalLight1.position.set(1000, 1000, 1000);
+        // シーンに追加
+        scene.add(directionalLight1);
+        // 平行光源2
+        var directionalLight2 = new THREE.DirectionalLight(0xffffff);
+        directionalLight2.position.set(-1000, 1000, 1000);
+        // シーンに追加
+        scene.add(directionalLight2);
+
+        // テクスチャー読み込み
+        var textureLoader = new THREE.TextureLoader();
+        var texture_suna = textureLoader.load("../texture/suna_2.jpg");
+        var mat_suna = new THREE.MeshPhongMaterial();
+        mat_suna.map = texture_suna;
+
+        //var bump_suna = textureLoader.load("../texture/suna_1.jpg");
+        //mat_suna.bumpMap = bump_suna;
+        //mat_suna.bumpscale = 0.2;
+
+        var planeGeometry1 = new THREE.PlaneGeometry( 2000, 2000, 2000);
+
+        var plane0 = new THREE.Mesh(planeGeometry1, mat_suna);
+        plane0.rotation.x=-1.5;
+        plane0.position.y=-100;
+        scene.add(plane0);
+
+
+        // 木0をスプライトで作成
+        var textureLoader = new THREE.TextureLoader();
+        var texture0 = textureLoader.load("../texture/kouen_1.png");
+        const material0 = new THREE.SpriteMaterial({ map: texture0,});
+
+        const sprite0 = new THREE.Sprite(material0);
+        sprite0.scale.set(100,100,100);
+        scene.add(sprite0);
+
+        // 木1をスプライトで作成
+        var texture1 = textureLoader.load("../texture/kouen_2.png");
+        const material1 = new THREE.SpriteMaterial({ map: texture1,});
+
+        const sprite1 = new THREE.Sprite(material1);
+        sprite1.position.x=2;
+        sprite1.scale.set(100,100,100);
+        scene.add(sprite1);
+
+
+        tick();
+        // 毎フレーム時に実行されるループイベントです
+        function tick() {
+          // レンダリング
+          renderer.render(scene, camera);
+          requestAnimationFrame(tick);
+        }
+      }
+    </script>
+  </head>
+
+  <body>
+    <canvas id="myCanvas"></canvas>
+  </body>
+</html>
