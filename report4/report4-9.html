@@ -59,12 +59,12 @@
         //mat_suna.bumpscale = 0.2;
 
         var planeGeometry1 = new THREE.PlaneGeometry( 20, 20, 20);
-
+/*
         var plane0 = new THREE.Mesh(planeGeometry1, mat_suna);
         plane0.rotation.x=-1.5;
         plane0.position.y=-1;
         scene.add(plane0);
-
+*/
         // 木0をスプライトで作成
         var textureLoader = new THREE.TextureLoader();
         var texture0 = textureLoader.load("../texture/kouen_1.png");
@@ -82,7 +82,7 @@
         sprite1.position.x=2;
         sprite1.scale.set(1,1,1);
         scene.add(sprite1);
-
+/*
         var texture2 = textureLoader.load("../texture/kouen_3.png");
         const materia2 = new THREE.SpriteMaterial({ map: texture2,});
 
@@ -108,7 +108,7 @@
         sprite4.position.z=-5;
         sprite4.scale.set(1,1,1);
         scene.add(sprite4);
-
+*/
         tick();
         // 毎フレーム時に実行されるループイベントです
         function tick() {
