@@ -50,27 +50,27 @@
       scene.add(axisHelper);
         // テクスチャー読み込み
        var textureLoader = new THREE.TextureLoader();
-/*        var texture_suna = textureLoader.load("../texture/suna_2.jpg");
+        var texture_suna = textureLoader.load("../texture/suna_2.jpg");
         var mat_suna = new THREE.MeshPhongMaterial();
         mat_suna.map = texture_suna;
-*/
+
         //var bump_suna = textureLoader.load("../texture/suna_1.jpg");
         //mat_suna.bumpMap = bump_suna;
         //mat_suna.bumpscale = 0.2;
 
-        var planeGeometry1 = new THREE.PlaneGeometry( 20, 20, 20);
-/*
+        var planeGeometry1 = new THREE.PlaneGeometry( 200, 200, 200);
+
         var plane0 = new THREE.Mesh(planeGeometry1, mat_suna);
         plane0.rotation.x=-1.5;
         plane0.position.y=-1;
         scene.add(plane0);
-*/
+
         // 木0をスプライトで作成
         var texture0 = textureLoader.load("../texture/kouen_1.png");
         const material0 = new THREE.SpriteMaterial({ map: texture0,});
 
         const sprite0 = new THREE.Sprite(material0);
-        sprite0.scale.set(1,1,1);
+        sprite0.scale.set(100,100,100);
         scene.add(sprite0);
 
         // 木1をスプライトで作成
@@ -78,36 +78,36 @@
         const material1 = new THREE.SpriteMaterial({ map: texture1,});
 
         const sprite1 = new THREE.Sprite(material1);
-        sprite1.position.x=2;
-        sprite1.scale.set(1,1,1);
+        sprite1.position.x=200;
+        sprite1.scale.set(100,100,100);
         scene.add(sprite1);
-/*
+
         var texture2 = textureLoader.load("../texture/kouen_3.png");
         const materia2 = new THREE.SpriteMaterial({ map: texture2,});
 
         const sprite2 = new THREE.Sprite(material2);
-        sprite2.position.x=2;
-        sprite2.position.z=5;
-        sprite2.scale.set(1,1,1);
+        sprite2.position.x=200;
+        sprite2.position.z=500;
+        sprite2.scale.set(100,100,100);
         scene.add(sprite2);
 
         var texture3 = textureLoader.load("../texture/kouen_4.png");
         const material3 = new THREE.SpriteMaterial({ map: texture3,});
 
         const sprite3 = new THREE.Sprite(material3);
-        sprite3.position.x=-2;
-        sprite3.scale.set(1,1,1);
+        sprite3.position.x=-200;
+        sprite3.scale.set(100,100,100);
         scene.add(sprite3);
 
         var texture4 = textureLoader.load("../texture/kouen_5.png");
         const material4 = new THREE.SpriteMaterial({ map: texture4,});
 
         const sprite4 = new THREE.Sprite(material4);
-        sprite4.position.x=2;
-        sprite4.position.z=-5;
-        sprite4.scale.set(1,1,1);
+        sprite4.position.x=200;
+        sprite4.position.z=-500;
+        sprite4.scale.set(100,100,100);
         scene.add(sprite4);
-*/
+
         tick();
         // 毎フレーム時に実行されるループイベントです
         function tick() {
