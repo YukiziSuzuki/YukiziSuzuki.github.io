@@ -58,12 +58,12 @@
         //mat_suna.bumpMap = bump_suna;
         //mat_suna.bumpscale = 0.2;
 
-//        var planeGeometry1 = new THREE.PlaneGeometry( 200, 200, 200);
+        var planeGeometry1 = new THREE.PlaneGeometry( 200, 200, 200);
 
-//      var plane0 = new THREE.Mesh(planeGeometry1, mat_suna);
-//      plane0.rotation.x=-1.5;
-//      plane0.position.y=-1;
-//      scene.add(plane0);
+      var plane0 = new THREE.Mesh(planeGeometry1, mat_suna);
+      plane0.rotation.x=-1.5;
+      plane0.position.y=-10;
+      scene.add(plane0);
 
         // 木0をスプライトで作成
         var texture0 = textureLoader.load("../texture/kouen_1.png");
