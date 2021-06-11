@@ -1,8 +1,7 @@
-
 <html>
   <head>
     <meta charset="utf-8" />
-    <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=dnCALgbtSA-wh8Mnd9g4LjlzHmaM7XlblG7nZ11JQTXZFO73jOSZWtg9vEXoeTWOT0GugVvjJ5O9u0fFq0WoB-QBs5y7nJCTaU7RhOLBfEjVWi9RwAor8DjescdFPamE" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="https://gc.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly95dWtpemlzdXp1a2kuZ2l0aHViLmlvLzIwMjFDRy1tYWluL2xlc3NvbjQvc2FtcGxlOC01Lmh0bWw"/><script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.min.js"></script>
+    <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=d0gM5QGLlv-TqUU6598YCeclvigk-OQs8TfmJv3eKyusla1WnH1mcfwuPVJ6nF7HArzisbj6DTlzfzJ-bLEm7gUt9Z33kvuYbbWgCQrI3LsTfAx3Pd2Ctl6RqtcPMFe_" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="https://gc.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly95dWtpemlzdXp1a2kuZ2l0aHViLmlvLzIwMjFDRy1tYWluL2xlc3NvbjQvc2FtcGxlOC01Lmh0bWw"/><script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.min.js"></script>
     <script src="OrbitControls.js"></script>
     <script>
       // ページの読み込みを待つ
@@ -21,31 +20,34 @@
         // 背景の色を設定
         renderer.setClearColor(0xeeeeff);
 
-
-
         // シーンを作成
         const scene = new THREE.Scene();
 
         // カメラを作成
         const camera = new THREE.PerspectiveCamera(45, width / height);
         // カメラの初期座標を設定
-        camera.position.set(0, 0, 10);
+        camera.position.set(0, 0, 1000);
 
         // カメラコントローラーを作成
         const controls = new THREE.OrbitControls(camera,document.body);
-
-        
+  
         // 平行光源1
         var directionalLight1 = new THREE.DirectionalLight(0xffffff);
-        directionalLight1.position.set(1000, 1000, 1000);
+        directionalLight1.position.set(100, 100, 100);
         // シーンに追加
         scene.add(directionalLight1);
         // 平行光源2
         var directionalLight2 = new THREE.DirectionalLight(0xffffff);
-        directionalLight2.position.set(-1000, 1000, 1000);
+        directionalLight2.position.set(-100, 100, 100);
         // シーンに追加
         scene.add(directionalLight2);
 
+        // helper
+      const gridHelper = new THREE.GridHelper(200,50); // size, step
+      scene.add(gridHelper);
+
+      const axisHelper = new THREE.AxisHelper(200,50);
+      scene.add(axisHelper);
         // テクスチャー読み込み
         var textureLoader = new THREE.TextureLoader();
         var texture_suna = textureLoader.load("../texture/suna_2.jpg");
@@ -60,7 +62,7 @@
 
         var plane0 = new THREE.Mesh(planeGeometry1, mat_suna);
         plane0.rotation.x=-1.5;
-        plane0.position.y=-10;
+        plane0.position.y=-1;
         scene.add(plane0);
 
 
@@ -107,8 +109,6 @@
         sprite4.position.z=-5;
         sprite4.scale.set(1,1,1);
         scene.add(sprite4);
-
-        
 
         tick();
         // 毎フレーム時に実行されるループイベントです
