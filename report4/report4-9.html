@@ -113,6 +113,19 @@
         sprite4.position.z=50;
         sprite4.scale.set(40,40,40);
         scene.add(sprite4);
+        
+        
+        //木
+        var texture5 = textureLoader.load("../texture/ki.png");
+        const material5 = new THREE.SpriteMaterial({ map: texture5,});
+
+        const sprite5 = new THREE.Sprite(material5);
+        sprite5.position.x=0;
+        sprite5.position.y=0;
+        sprite5.position.z=0;
+        sprite5.scale.set(100,100,100);
+        scene.add(sprite5);
+        
 
         tick();
         // 毎フレーム時に実行されるループイベントです
