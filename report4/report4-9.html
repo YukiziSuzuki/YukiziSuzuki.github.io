@@ -71,6 +71,21 @@
         plane1.position.z=-500;
         scene.add(plane1);
         
+        var plane2 = new THREE.Mesh(planeGeometry2, mat_biru01);
+        plane2.position.x=500;
+        plane2.position.y=100;
+        plane2.position.z=-500;
+        plane2.rotation.y=1.5;
+        scene.add(plane2);
+        
+        var plane3 = new THREE.Mesh(planeGeometry2, mat_biru01);
+        plane2.position.x=-500;        
+        plane3.position.y=100;
+        plane3.position.z=-500;
+        plane2.rotation.y=-1.5;        
+        scene.add(plane3);
+        
+        
 
         // 馬1をスプライトで作成
         var texture0 = textureLoader.load("../texture/kouen_1.png");
@@ -134,9 +149,9 @@
 
         const sprite5 = new THREE.Sprite(material5);
         sprite5.position.x=0;
-        sprite5.position.y=30;
+        sprite5.position.y=0;
         sprite5.position.z=0;
-        sprite5.scale.set(150,150,150);
+        sprite5.scale.set(100,100,100);
         scene.add(sprite5);
         
 
