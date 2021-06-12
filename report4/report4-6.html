@@ -327,40 +327,27 @@ water.rotation.x=-1.5;
 
 scene.add(water);
 
-    
-   var cylinderGeometry =  new THREE.CylinderGeometry(20,20,40,50);
-   var cylinderMaterial = new THREE.MeshPhongMaterial({color: 0x00FF7F});
-    
-    
-    
-    var cylinder = new THREE.Mesh(cylinderGeometry,cylinderMaterial);
-    
-    scene.add(cylinder);
-
-
-
-
 
 // 平行光源
-var directionalLight1 = new THREE.DirectionalLight(0xffffff);
+var directionalLight1 = new THREE.DirectionalLight(0xffffff,0.5);
 directionalLight1.position.set(100, 100, 0);
 // シーンに追加
 scene.add(directionalLight1);
 
-var directionalLight2 = new THREE.DirectionalLight(0xffffff);
+var directionalLight2 = new THREE.DirectionalLight(0xffffff,0.5);
 directionalLight2.position.set(-100, 100, 0);
 // シーンに追加
 scene.add(directionalLight2);
 
-var directionalLight3 = new THREE.DirectionalLight(0xffffff);
+var directionalLight3 = new THREE.DirectionalLight(0xffffff,0.5);
 directionalLight3.position.set(0, 100, 100);
 // シーンに追加
 scene.add(directionalLight3);
     
-//var directionalLight4 = new THREE.DirectionalLight(0xffffff);
-//directionalLight4.position.set(-100, 100, -100);
+var directionalLight4 = new THREE.DirectionalLight(0xffffff,0.5);
+directionalLight4.position.set(-100, 100, -100);
 // シーンに追加
-//scene.add(directionalLight4);    
+scene.add(directionalLight4);    
 
 // 初回実行
 var update = function() {
