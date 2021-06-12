@@ -167,11 +167,18 @@
         scene.add(sprite5);
   */      
         var cylinderGeometry =  new THREE.CylinderGeometry(5,5,40,50,true);
+        var cylinderGeometry2 =  new THREE.CylinderGeometry(20,0,40,50,true);
         var cylinderMaterial = new THREE.MeshPhongMaterial({color: 0x00FF7F});
     
         var cylinder = new THREE.Mesh(cylinderGeometry,cylinderMaterial);
         cylinder.position.y=-30;
         scene.add(cylinder);
+        
+        
+        var cylinder2 = new THREE.Mesh(cylinderGeometry2,cylinderMaterial);
+        cylinder.position.y=0;
+        scene.add(cylinder);
+        
         
         
 
