@@ -51,13 +51,25 @@
         //var bump_suna = textureLoader.load("../texture/suna_1.jpg");
         //mat_suna.bumpMap = bump_suna;
         //mat_suna.bumpscale = 0.2;
+        
+       var textureLoader = new THREE.TextureLoader();
+       var texture_biru01 = textureLoader.load("../texture/biru01.jpg");
+       var mat_biru01 = new THREE.MeshPhongMaterial();
+       mat_biru01.map = texture_biru01;
+        
 
-        var planeGeometry1 = new THREE.PlaneGeometry( 500, 500, 500);
+        var planeGeometry1 = new THREE.PlaneGeometry( 200, 200, 200);
+        var planeGeometry2 = new THREE.PlaneGeometry( 500, 500, 500);
 
       var plane0 = new THREE.Mesh(planeGeometry1, mat_suna);
       plane0.rotation.x=-1.5;
       plane0.position.y=-50;
       scene.add(plane0);
+        
+      var plane1 = new THREE.Mesh(planeGeometry2, mat_biru01);
+      plane1.position.z=-500;
+      scene.add(plane1);
+        
 
         // 馬1をスプライトで作成
         var texture0 = textureLoader.load("../texture/kouen_1.png");
