@@ -69,9 +69,15 @@
        var mat_biru01 = new THREE.MeshPhongMaterial();
        mat_biru01.map = texture_biru01;
         
+        
+       var texture_siba = textureLoader.load("../texture/siba.jpg");
+       var mat_siba = new THREE.MeshPhongMaterial();
+       mat_siba.map = texture_siba;        
+        
 
-        var planeGeometry1 = new THREE.PlaneGeometry( 400, 400, 400);
-        var planeGeometry2 = new THREE.PlaneGeometry( 600, 600, 600);
+        var planeGeometry1 = new THREE.PlaneGeometry( 400, 400, 400, 400);
+        var planeGeometry2 = new THREE.PlaneGeometry( 600, 600);
+        var planeGeometry3 = new THREE.PlaneGeometry( 200, 100, 100, 100);
 
         var plane0 = new THREE.Mesh(planeGeometry1, mat_suna);
         plane0.rotation.x=-1.5;
@@ -96,6 +102,12 @@
         plane3.position.z=0;
         plane3.rotation.y=1.5;        
         scene.add(plane3);
+        
+        var plane4 = new THREE.Mesh(planeGeometry3, mat_siba);
+        plane4.position.x=50;
+        plane4.position.y=50;
+        plane4.position.y=-49;
+        scene.add(plane4);
         
         
 
