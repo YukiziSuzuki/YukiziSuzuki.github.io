@@ -326,6 +326,14 @@ water.position.y=-3;
 water.rotation.x=-1.5;
 
 scene.add(water);
+    
+    
+    var cylinderGeometry2 =  new THREE.CylinderGeometry(10,10,60,50,true);
+    var cylinderMaterial = new THREE.MeshPhongMaterial({color: 0x00FF7F});
+    
+    var cylinder = new THREE.Mesh(cylinderGeometry,cylinderMaterial);
+    cylinder.position.y=-35;
+    scene.add(cylinder);   
 
 
 // 平行光源
