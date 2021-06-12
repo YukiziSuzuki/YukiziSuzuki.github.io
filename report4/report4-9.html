@@ -58,17 +58,18 @@
        mat_biru01.map = texture_biru01;
         
 
-        var planeGeometry1 = new THREE.PlaneGeometry( 200, 200, 200);
+        var planeGeometry1 = new THREE.PlaneGeometry( 300, 300, 300);
         var planeGeometry2 = new THREE.PlaneGeometry( 500, 500, 500);
 
-      var plane0 = new THREE.Mesh(planeGeometry1, mat_suna);
-      plane0.rotation.x=-1.5;
-      plane0.position.y=-50;
-      scene.add(plane0);
+        var plane0 = new THREE.Mesh(planeGeometry1, mat_suna);
+        plane0.rotation.x=-1.5;
+        plane0.position.y=-50;
+        scene.add(plane0);
         
-      var plane1 = new THREE.Mesh(planeGeometry2, mat_biru01);
-      plane1.position.z=-500;
-      scene.add(plane1);
+        var plane1 = new THREE.Mesh(planeGeometry2, mat_biru01);
+        plane1.position.y=100;
+        plane1.position.z=-500;
+        scene.add(plane1);
         
 
         // 馬1をスプライトで作成
