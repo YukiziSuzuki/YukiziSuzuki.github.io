@@ -160,6 +160,14 @@
         sprite5.scale.set(100,100,100);
         scene.add(sprite5);
         
+        var cylinderGeometry =  new THREE.CylinderGeometry(20,20,40,50);
+        var cylinderMaterial = new THREE.MeshPhongMaterial({color: 0x00FF7F});
+    
+        var cylinder = new THREE.Mesh(cylinderGeometry,cylinderMaterial);
+    
+        scene.add(cylinder);
+        
+        
 
         tick();
         // 毎フレーム時に実行されるループイベントです
