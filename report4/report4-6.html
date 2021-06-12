@@ -95,9 +95,9 @@ var texture_aki3 = textureLoader.load("../texture/mountain_00053.jpg");
 var mat_aki3 = new THREE.MeshPhongMaterial();
 mat_aki3.map = texture_aki3;
 
-var bump_aki3 = textureLoader.load("../texture/mountain_00053.jpg");
-mat_aki3.bumpMap = bump_aki3;
-mat_aki3.bumpscale = 0.2;
+//var bump_aki3 = textureLoader.load("../texture/mountain_00053.jpg");
+//mat_aki3.bumpMap = bump_aki3;
+//mat_aki3.bumpscale = 0.2;
 
 
 var texture_take1 = textureLoader.load("../texture/take1.jpg");
@@ -212,13 +212,13 @@ var planeMaterial = new THREE.MeshPhongMaterial({ color: 0xffffff });
 var planeMaterial2 = new THREE.MeshPhongMaterial({ color: 0x9999ff });
 
 //var plane0 = new THREE.Mesh(planeGeometry0, planeMaterial);
-var plane0 = new THREE.Mesh(planeGeometry0, mat_aki1);
+var plane0 = new THREE.Mesh(planeGeometry0, mat_aki3);
 plane0.position.z=-10;
 plane0.position.y=3;
 scene.add(plane0);
 
 //var plane01 = new THREE.Mesh(planeGeometry0, planeMaterial);
-var plane01 = new THREE.Mesh(planeGeometry0, mat_aki2);
+var plane01 = new THREE.Mesh(planeGeometry0, mat_aki3);
 plane01.rotation.y=-1.5;
 plane01.position.x=10;
 plane01.position.y=3;
@@ -235,10 +235,10 @@ scene.add(plane02);
 
 
 //var plane = new THREE.Mesh(planeGeometry1, planeMaterial);
-var plane = new THREE.Mesh(planeGeometry1, mat_sky);
-plane.position.y=7;
-plane.rotation.x=1.5;
-scene.add(plane);
+//var plane = new THREE.Mesh(planeGeometry1, mat_sky);
+//plane.position.y=7;
+//plane.rotation.x=1.5;
+//scene.add(plane);
 
 //var plane1 = new THREE.Mesh(planeGeometry1, planeMaterial);
 var plane1 = new THREE.Mesh(planeGeometry1, mat_cobbleStone);
