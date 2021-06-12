@@ -64,7 +64,7 @@
         //mat_suna.bumpMap = bump_suna;
         //mat_suna.bumpscale = 0.2;
         
-       var textureLoader = new THREE.TextureLoader();
+//       var textureLoader = new THREE.TextureLoader();
        var texture_biru01 = textureLoader.load("../texture/biru_01.jpg");
        var mat_biru01 = new THREE.MeshPhongMaterial();
        mat_biru01.map = texture_biru01;
@@ -166,16 +166,38 @@
         sprite5.scale.set(100,100,100);
         scene.add(sprite5);
   */      
+        
+       // テクスチャー読み込み
+       var textureLoader = new THREE.TextureLoader();
+       var texture_miki = textureLoader.load("../texture/miki.jpg");
+       var mat_miki = new THREE.MeshPhongMaterial();
+       mat_miki.map = texture_miki;
+
+        var bump_miki = textureLoader.load("../texture/miki.jpg");
+        mat_miki.bumpMap = bump_miki;
+        mat_miki.bumpscale = 0.2;
+        
+        
+       // テクスチャー読み込み
+       var textureLoader = new THREE.TextureLoader();
+       var texture_ha = textureLoader.load("../texture/ki_3.png");
+       var mat_ha = new THREE.MeshPhongMaterial();
+       mat_ha.map = texture_ha;
+
+        var bump_ha = textureLoader.load("../texture/ki_3.png");
+        mat_ha.bumpMap = bump_ha;
+        mat_ha.bumpscale = 0.2;
+                
         var cylinderGeometry =  new THREE.CylinderGeometry(5,5,30,50,true);
         var cylinderGeometry2 =  new THREE.CylinderGeometry(0,30,60,50,true);
         var cylinderMaterial = new THREE.MeshPhongMaterial({color: 0x00FF7F});
     
-        var cylinder = new THREE.Mesh(cylinderGeometry,cylinderMaterial);
+        var cylinder = new THREE.Mesh(cylinderGeometry,mat_miki);
         cylinder.position.y=-35;
         scene.add(cylinder);
         
         
-        var cylinder2 = new THREE.Mesh(cylinderGeometry2,cylinderMaterial);
+        var cylinder2 = new THREE.Mesh(cylinderGeometry2,mat_ha);
         cylinder2.position.y=0;
         scene.add(cylinder2);
         
