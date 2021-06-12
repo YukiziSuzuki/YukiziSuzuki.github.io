@@ -77,7 +77,7 @@
 
         var planeGeometry1 = new THREE.PlaneGeometry( 400, 400, 400, 400);
         var planeGeometry2 = new THREE.PlaneGeometry( 600, 600);
-        var planeGeometry3 = new THREE.PlaneGeometry( 200, 100, 100, 100);
+        var planeGeometry3 = new THREE.PlaneGeometry( 200, 150, 100, 100);
 
         var plane0 = new THREE.Mesh(planeGeometry1, mat_suna);
         plane0.rotation.x=-1.5;
@@ -104,7 +104,7 @@
         scene.add(plane3);
         
         var plane4 = new THREE.Mesh(planeGeometry3, mat_siba);
-        plane4.position.x=80;
+        plane4.position.x=90;
         plane4.position.z=-100;
         plane4.position.y=-42;
         plane4.rotation.x=-1.5;
