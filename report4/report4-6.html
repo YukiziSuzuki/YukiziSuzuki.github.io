@@ -343,9 +343,15 @@ mat_take02.map = texture_take02;
     
     var cylinder = new THREE.Mesh(cylinderGeometry2,mat_take02);
     cylinder.position.x=5;
-    cylinder.position.z=-9;
+    cylinder.position.z=-8;
     cylinder.position.y=-1;
     scene.add(cylinder);   
+    
+    var cylinder1 = new THREE.Mesh(cylinderGeometry2,mat_take02);
+    cylinder1.position.x=4;
+    cylinder1.position.z=-8;
+    cylinder1.position.y=-1;
+    scene.add(cylinder1); 
 
 
 // 平行光源
