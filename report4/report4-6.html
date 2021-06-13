@@ -422,7 +422,14 @@ mat_take02.map = texture_take02;
     cylinder10.position.x=0;
     cylinder10.position.z=0;
     cylinder10.position.y=-1;
-    scene.add(cylinder10);      
+    scene.add(cylinder10); 
+    
+    var cylinder11 = new THREE.Mesh(cylinderGeometry1,mat_torii);
+    cylinder11.position.x=0;
+    cylinder11.position.z=0;
+    cylinder11.position.y=5;
+    cylinder11.rotation.y=1.5;
+    scene.add(cylinder11);    
     
     
     var texture0 = textureLoader.load("../texture/tera.png");
