@@ -55,13 +55,13 @@ mat_stone.bumpMap = bump_stone;
 mat_stone.bumpscale = 0.2;
     
     
-var texture_tutuzi = textureLoader.load("../texture/tutuzi_1.jpg");
-var mat_tutuzi = new THREE.MeshPhongMaterial();
-mat_tutuzi.map = texture_tutuzi;
+var texture_torii = textureLoader.load("../texture/torii_1.jpg");
+var mat_torii = new THREE.MeshPhongMaterial();
+mat_torii.map = texture_torii;
 
-var bump_tutuzi = textureLoader.load("../texture/tutuzi_1.jpg");
-mat_tutuzi.bumpMap = bump_tutuzi;
-mat_tutuzi.bumpscale = 0.2;    
+var bump_torii = textureLoader.load("../texture/torii_1.jpg");
+mat_torii.bumpMap = bump_torii;
+mat_torii.bumpscale = 0.2;    
     
 
 
@@ -412,13 +412,13 @@ mat_take02.map = texture_take02;
     cylinder8.position.y=-1;
     scene.add(cylinder8);  
 
-    var cylinder9 = new THREE.Mesh(cylinderGeometry2,mat_take02);
+    var cylinder9 = new THREE.Mesh(cylinderGeometry2,mat_torii);
     cylinder9.position.x=2.5;
     cylinder9.position.z=0;
     cylinder9.position.y=-1;
     scene.add(cylinder9);   
     
-    var cylinder10 = new THREE.Mesh(cylinderGeometry2,mat_take02);
+    var cylinder10 = new THREE.Mesh(cylinderGeometry2,mat_torii);
     cylinder10.position.x=2;
     cylinder10.position.z=0;
     cylinder10.position.y=-1;
