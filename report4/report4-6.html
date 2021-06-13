@@ -351,6 +351,7 @@ mat_take02.map = texture_take02;
     var cylinderGeometry1 =  new THREE.CylinderGeometry(0.3,0.3,3,50,true);
     var cylinderGeometry3 =  new THREE.CylinderGeometry(0.3,0.3,4,50,true);
     var cylinderGeometry2 =  new THREE.CylinderGeometry(0.1,0.1,4,50,true);
+    var cylinderGeometry4 =  new THREE.CylinderGeometry(0.2,0.2,4,50,true);
     var cylinderMaterial = new THREE.MeshPhongMaterial({color: 0x00FF7F});
     
     var cylinder = new THREE.Mesh(cylinderGeometry2,mat_take02);
@@ -428,14 +429,14 @@ mat_take02.map = texture_take02;
     var cylinder11 = new THREE.Mesh(cylinderGeometry3,mat_torii);
     cylinder11.position.x=1;
     cylinder11.position.z=0;
-    cylinder11.position.y=1;
+    cylinder11.position.y=0.5;
     cylinder11.rotation.z=1.55;
     scene.add(cylinder11);    
     
-    var cylinder12 = new THREE.Mesh(cylinderGeometry1,mat_torii);
+    var cylinder12 = new THREE.Mesh(cylinderGeometry4,mat_torii);
     cylinder12.position.x=1;
     cylinder12.position.z=0;
-    cylinder12.position.y=0;
+    cylinder12.position.y=-0.5;
     cylinder12.rotation.z=1.55;
     scene.add(cylinder12);  
     
