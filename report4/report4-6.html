@@ -387,7 +387,19 @@ mat_take02.map = texture_take02;
     cylinder6.position.x=2.5;
     cylinder6.position.z=-5;
     cylinder6.position.y=-1;
-    scene.add(cylinder6);     
+    scene.add(cylinder6);  
+    
+    var cylinder7 = new THREE.Mesh(cylinderGeometry2,mat_take02);
+    cylinder7.position.x=7;
+    cylinder7.position.z=-4;
+    cylinder7.position.y=-1;
+    scene.add(cylinder7);  
+    
+    var cylinder8 = new THREE.Mesh(cylinderGeometry2,mat_take02);
+    cylinder8.position.x=2.5;
+    cylinder8.position.z=-4;
+    cylinder8.position.y=-1;
+    scene.add(cylinder8);  
 
         var texture0 = textureLoader.load("../texture/tera.png");
         const material0 = new THREE.SpriteMaterial({ map: texture0,});
