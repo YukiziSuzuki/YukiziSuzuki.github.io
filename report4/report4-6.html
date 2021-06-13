@@ -53,6 +53,16 @@ mat_stone.map = texture_stone;
 var bump_stone = textureLoader.load("../texture/stone_00002.jpg");
 mat_stone.bumpMap = bump_stone;
 mat_stone.bumpscale = 0.2;
+    
+    
+var texture_tutuzi = textureLoader.load("../texture/tutuzi.png");
+var mat_tutuzi = new THREE.MeshPhongMaterial();
+mat_tutuzi.map = texture_tutuzi;
+
+var bump_tutuzi = textureLoader.load("../texture/tutuzi.png");
+mat_tutuzi.bumpMap = bump_tutuzi;
+mat_tutuzi.bumpscale = 0.2;    
+    
 
 
 var texture_sky = textureLoader.load("../texture/sky_00013.jpg");
@@ -410,6 +420,16 @@ mat_take02.map = texture_take02;
         sprite0.position.z=-5;
         sprite0.scale.set(8,8,8);
         scene.add(sprite0);
+    
+    
+    
+    //球
+var sphereGeometry = new THREE.SphereGeometry( 5, 32, 32 ); 
+//半径、垂直方向の分割数、水平方向の分割数
+var sphere = new THREE.Mesh( sphereGeometry, mat_tutuzi );
+sphere.position.set( 0, 0, -5 );
+scene.add( sphere );
+    
 
 
 // 平行光源
