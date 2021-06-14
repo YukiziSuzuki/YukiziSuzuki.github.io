@@ -418,27 +418,37 @@ mat_take02.map = texture_take02;
     cylinder9.position.x=2;
     cylinder9.position.z=0;
     cylinder9.position.y=-1;
-    scene.add(cylinder9);   
+    //scene.add(cylinder9);   
     
     var cylinder10 = new THREE.Mesh(cylinderGeometry1,mat_torii);
     cylinder10.position.x=0;
     cylinder10.position.z=0;
     cylinder10.position.y=-1;
-    scene.add(cylinder10); 
+   //scene.add(cylinder10); 
     
     var cylinder11 = new THREE.Mesh(cylinderGeometry3,mat_torii);
     cylinder11.position.x=1;
     cylinder11.position.z=0;
     cylinder11.position.y=0.5;
     cylinder11.rotation.z=1.55;
-    scene.add(cylinder11);    
+    //scene.add(cylinder11);    
     
     var cylinder12 = new THREE.Mesh(cylinderGeometry4,mat_torii);
     cylinder12.position.x=1;
     cylinder12.position.z=0;
     cylinder12.position.y=-0.5;
     cylinder12.rotation.z=1.55;
-    scene.add(cylinder12);  
+    //scene.add(cylinder12);
+    
+    
+    const torii = new THREE.Group();
+    torii.add(cylinder9);
+    torii.add(cylinder10);
+    torii.add(cylinder11);
+    torii.add(cylinder12);
+    torii.position.x=-3;
+    torii.position.z=-3;
+    scene.add(torii);
     
     
     var texture0 = textureLoader.load("../texture/tera.png");
