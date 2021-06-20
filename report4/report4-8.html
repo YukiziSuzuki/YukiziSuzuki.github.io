@@ -84,7 +84,20 @@
         mat_iwa.bumpscale = 0.2;
 
 
+        var textureLoader = new THREE.TextureLoader();
+        var texture_gake = textureLoader.load("../texture/gake.jpg");
+        var mat_gake = new THREE.MeshPhongMaterial();
+        mat_gake.map = texture_gake;
 
+        var bump_gake = textureLoader.load("../texture/gake.jpg");
+        mat_gake.bumpMap = bump_gake;
+        mat_gake.bumpscale = 0.2;
+
+
+        var textureLoader = new THREE.TextureLoader();
+        var texture_mori = textureLoader.load("../texture/mori1.jpg");
+        var mat_mori = new THREE.MeshPhongMaterial();
+        mat_mori.map = texture_mori;
 
 
         var planeGeometry1 = new THREE.PlaneGeometry( 200, 200, 200);
@@ -95,6 +108,8 @@
         plane0.position.z=-100;
         plane0.position.y=1;
         scene.add(plane0);
+        
+        
 
         var plane1 = new THREE.Mesh(planeGeometry1, mat_zilyari);
         plane1.rotation.x=-1.55;
@@ -118,7 +133,36 @@
         plane3.position.z=230;
         scene.add(plane3);
 
+        
+        var planeGeometry3 = new THREE.PlaneGeometry( 60, 200, 20);
+        var plane4 = new THREE.Mesh(planeGeometry3, mat_gake);
+        plane4.rotation.x=-1;
+        plane4.position.x=70;
+        plane4.position.y=-55;
+        plane4.position.z=70;
+        scene.add(plane4);
 
+        var plane5 = new THREE.Mesh(planeGeometry3, mat_gake);
+        plane5.rotation.x=-1;
+        plane5.position.x=-70;
+        plane5.position.y=-55;
+        plane5.position.z=70;
+        scene.add(plane5);
+
+        var planeGeometry4 = new THREE.PlaneGeometry( 600, 300, 20);
+        var plane6 = new THREE.Mesh(planeGeometry4, mat_mori);
+        plane6.rotation.y=-1.57;
+        plane6.position.x=100;
+        plane6.position.z=30;
+        scene.add(plane6);
+
+        var plane7 = new THREE.Mesh(planeGeometry4, mat_mori);
+        plane7.rotation.y=1.57;
+        plane7.position.x=-100;
+        plane7.position.z=30;
+        scene.add(plane7);
+        
+        
 
 
         var geometry = new THREE.BoxGeometry(80, 5, 10);
@@ -274,7 +318,18 @@
         cylinder4.rotation.z=1.55;
         cylinder4.position.y=75;
         cylinder4.position.z=-10;
-        scene.add(cylinder4)
+        scene.add(cylinder4);
+        
+        
+        var texture0 = textureLoader.load("../texture/tera.png");
+        const material0 = new THREE.SpriteMaterial({ map: texture0,});
+
+        const sprite0 = new THREE.Sprite(material0);
+        sprite0.position.x=0;
+        sprite0.position.y=1;
+        sprite0.position.z=-50;
+        sprite0.scale.set(50,50,50);
+        scene.add(sprite0);     
 
 
 
