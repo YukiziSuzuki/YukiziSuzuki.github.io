@@ -1,0 +1,296 @@
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=dnCALgbtSA-wh8Mnd9g4LjlzHmaM7XlblG7nZ11JQTXZFO73jOSZWtg9vEXoeTWOT0GugVvjJ5O9u0fFq0WoB-QBs5y7nJCTaU7RhOLBfEjVWi9RwAor8DjescdFPamE" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="https://gc.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly95dWtpemlzdXp1a2kuZ2l0aHViLmlvLzIwMjFDRy1tYWluL2xlc3NvbjQvc2FtcGxlOC01Lmh0bWw"/><script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.min.js"></script>
+    <script src="OrbitControls.js"></script>
+    <script>
+      // ページの読み込みを待つ
+      window.addEventListener('load', init);
+
+      function init() {
+        // サイズを指定
+        const width = 960;
+        const height = 540;
+
+        // レンダラーを作成
+        const renderer = new THREE.WebGLRenderer({
+          canvas: document.querySelector('#myCanvas')
+        });
+        renderer.setSize(width, height);
+        // 背景の色を設定
+        //renderer.setClearColor(0xeeeeff);
+
+        // シーンを作成
+        const scene = new THREE.Scene();
+
+        // カメラを作成
+        const camera = new THREE.PerspectiveCamera(45, width / height);
+        // カメラの初期座標を設定
+        camera.position.set(0, 0, 1000);
+
+        // カメラコントローラーを作成
+        const controls = new THREE.OrbitControls(camera,document.body);
+
+        // 平行光源1
+        var directionalLight1 = new THREE.DirectionalLight(0xffffff);
+        directionalLight1.position.set(1000, 1000, 1000);
+        // シーンに追加
+        scene.add(directionalLight1);
+        // 平行光源2
+        var directionalLight2 = new THREE.DirectionalLight(0xffffff);
+        directionalLight2.position.set(-1000, 1000, 1000);
+        // シーンに追加
+        scene.add(directionalLight2);
+
+        // テクスチャー読み込み
+        var textureLoader = new THREE.TextureLoader();
+        var texture_isi = textureLoader.load("../texture/stone_00001.jpg");
+        var mat_isi = new THREE.MeshPhongMaterial();
+        mat_isi.map = texture_isi;
+
+        var bump_isi = textureLoader.load("../texture/stone_00001.jpg");
+        mat_isi.bumpMap = bump_isi;
+        mat_isi.bumpscale = 0.2;
+
+
+        var textureLoader = new THREE.TextureLoader();
+        var texture_zilyari = textureLoader.load("../texture/zilyari.jpg");
+        var mat_zilyari = new THREE.MeshPhongMaterial();
+        mat_zilyari.map = texture_zilyari;
+
+        var bump_zilyari = textureLoader.load("../texture/zilyari.jpg");
+        mat_zilyari.bumpMap = bump_zilyari;
+        mat_zilyari.bumpscale = 0.2;
+
+
+        var textureLoader = new THREE.TextureLoader();
+        var texture_isidatami = textureLoader.load("../texture/isidatami.jpg");
+        var mat_isidatami = new THREE.MeshPhongMaterial();
+        mat_isidatami.map = texture_isidatami;
+
+        var bump_isidatami = textureLoader.load("../texture/isidatami.jpg");
+        mat_isidatami.bumpMap = bump_isidatami;
+        mat_isidatami.bumpscale = 0.2;
+
+
+        var textureLoader = new THREE.TextureLoader();
+        var texture_iwa = textureLoader.load("../texture/iwa.jpg");
+        var mat_iwa = new THREE.MeshPhongMaterial();
+        mat_iwa.map = texture_iwa;
+
+        var bump_iwa = textureLoader.load("../texture/iwa.jpg");
+        mat_iwa.bumpMap = bump_iwa;
+        mat_iwa.bumpscale = 0.2;
+
+
+
+
+
+        var planeGeometry1 = new THREE.PlaneGeometry( 200, 200, 200);
+        var planeMaterial1 = new THREE.MeshPhongMaterial({color:0x804000})
+
+        var plane0 = new THREE.Mesh(planeGeometry1, mat_zilyari);
+        plane0.rotation.x=-1.55;
+        plane0.position.z=-100;
+        plane0.position.y=1;
+        scene.add(plane0);
+
+        var plane1 = new THREE.Mesh(planeGeometry1, mat_zilyari);
+        plane1.rotation.x=-1.55;
+        plane1.position.z=230;
+        plane1.position.y=-108;
+        scene.add(plane1);
+
+
+        var planeGeometry = new THREE.PlaneGeometry( 80, 150, 20);
+        var planeMaterial = new THREE.MeshPhongMaterial({ color: 0x9999ff });
+
+        var plane2 = new THREE.Mesh(planeGeometry, mat_isidatami);
+        plane2.rotation.x=-1.55;
+        plane2.position.y=1;
+        plane2.position.z=-75;
+        scene.add(plane2);
+
+        var plane3 = new THREE.Mesh(planeGeometry, mat_isidatami);
+        plane3.rotation.x=-1.55;
+        plane3.position.y=-107;
+        plane3.position.z=230;
+        scene.add(plane3);
+
+
+
+
+        var geometry = new THREE.BoxGeometry(80, 5, 10);
+        var geometry1 = new THREE.BoxGeometry(220,5,20);
+        var material = new THREE.MeshPhongMaterial({ color: 0x00ffff });
+        var material1 = new THREE.MeshPhongMaterial({ color: 0x0000ff});
+        var box = new THREE.Mesh(geometry, mat_iwa);
+        box.position.z=5;
+        box.position.y=-4;
+        scene.add(box);
+
+        var box1 = new THREE.Mesh(geometry, mat_iwa);
+        box1.position.z=13;
+        box1.position.y=-9;
+        scene.add(box1);
+
+        var box2 = new THREE.Mesh(geometry, mat_iwa);
+        box2.position.z=21;
+        box2.position.y=-14;
+        scene.add(box2);
+
+        var box3 = new THREE.Mesh(geometry, mat_iwa);
+        box3.position.z=29;
+        box3.position.y=-19;
+        scene.add(box3);
+
+        var box4 = new THREE.Mesh(geometry, mat_iwa);
+        box4.position.z=37;
+        box4.position.y=-24;
+        scene.add(box4);
+
+        var box5 = new THREE.Mesh(geometry, mat_iwa);
+        box5.position.z=45;
+        box5.position.y=-29;
+        scene.add(box5);
+
+        var box6 = new THREE.Mesh(geometry, mat_iwa);
+        box6.position.z=53;
+        box6.position.y=-34;
+        scene.add(box6);
+
+        var box7 = new THREE.Mesh(geometry, mat_iwa);
+        box7.position.z=61;
+        box7.position.y=-39;
+        scene.add(box7);
+
+        var box8 = new THREE.Mesh(geometry, mat_iwa);
+        box8.position.z=69;
+        box8.position.y=-44;
+        scene.add(box8);
+
+        var box9 = new THREE.Mesh(geometry, mat_iwa);
+        box9.position.z=77;
+        box9.position.y=-49;
+        scene.add(box9);
+
+        var box10 = new THREE.Mesh(geometry, mat_iwa);
+        box10.position.z=85;
+        box10.position.y=-54;
+        scene.add(box10);
+
+        var box11 = new THREE.Mesh(geometry, mat_iwa);
+        box11.position.z=93;
+        box11.position.y=-59;
+        scene.add(box11);
+
+        var box12 = new THREE.Mesh(geometry, mat_iwa);
+        box12.position.z=101;
+        box12.position.y=-64;
+        scene.add(box12);
+
+        var box13 = new THREE.Mesh(geometry, mat_iwa);
+        box13.position.z=109;
+        box13.position.y=-69;
+        scene.add(box13);
+
+        var box14 = new THREE.Mesh(geometry, mat_iwa);
+        box14.position.z=117;
+        box14.position.y=-74;
+        scene.add(box14);
+
+        var box15 = new THREE.Mesh(geometry, mat_iwa);
+        box15.position.z=125;
+        box15.position.y=-79;
+        scene.add(box15);
+
+        var box16 = new THREE.Mesh(geometry, mat_iwa);
+        box16.position.z=133;
+        box16.position.y=-84;
+        scene.add(box16);
+
+        var box17 = new THREE.Mesh(geometry, mat_iwa);
+        box17.position.z=141;
+        box17.position.y=-89;
+        scene.add(box17);
+
+        var box18 = new THREE.Mesh(geometry, mat_iwa);
+        box18.position.z=149;
+        box18.position.y=-94;
+        scene.add(box18);
+
+        var box19 = new THREE.Mesh(geometry, mat_iwa);
+        box19.position.z=157;
+        box19.position.y=-99;
+        scene.add(box19);
+
+        var box20 = new THREE.Mesh(geometry, mat_iwa);
+        box20.position.z=165;
+        box20.position.y=-104;
+        scene.add(box20);
+
+        var box21 = new THREE.Mesh(geometry1, mat_isi);
+        box21.rotation.x=-1.02;
+        box21.rotation.z=1.57;
+        box21.position.x=40;
+        box21.position.z=90;
+        box21.position.y=-50;
+        scene.add(box21);
+
+        var box22 = new THREE.Mesh(geometry1, mat_isi);
+        box22.rotation.x=-1.02;
+        box22.rotation.z=1.57;
+        box22.position.x=-40;
+        box22.position.z=90;
+        box22.position.y=-50;
+        scene.add(box22);
+
+
+        var cylinderGeometry =  new THREE.CylinderGeometry(7,7,100,50,true);
+        var cylinderGeometry1 = new THREE.CylinderGeometry(7,7,160,50,true);
+
+        var cylinderMaterial = new THREE.MeshPhongMaterial({color: 0xff0000});
+
+        var cylinder1 = new THREE.Mesh(cylinderGeometry,cylinderMaterial);
+        cylinder1.position.x=50;
+        cylinder1.position.y=50;
+        cylinder1.position.z=-10;
+        scene.add(cylinder1);
+
+        var cylinder2 = new THREE.Mesh(cylinderGeometry,cylinderMaterial);
+        cylinder2.position.x=-50;
+        cylinder2.position.y=50;
+        cylinder2.position.z=-10;
+        scene.add(cylinder2);
+
+        var cylinder3 = new THREE.Mesh(cylinderGeometry1,cylinderMaterial);
+        cylinder3.rotation.z=1.55;
+        cylinder3.position.y=100;
+        cylinder3.position.z=-10;
+        scene.add(cylinder3);
+
+        var cylinder4 = new THREE.Mesh(cylinderGeometry,cylinderMaterial);
+        cylinder4.rotation.z=1.55;
+        cylinder4.position.y=75;
+        cylinder4.position.z=-10;
+        scene.add(cylinder4)
+
+
+
+
+        tick();
+        // 毎フレーム時に実行されるループイベントです
+        function tick() {
+          // レンダリング
+          renderer.render(scene, camera);
+          requestAnimationFrame(tick);
+        }
+      }
+    </script>
+  </head>
+
+  <body>
+    <canvas id="myCanvas"></canvas>
+  </body>
+</html>
