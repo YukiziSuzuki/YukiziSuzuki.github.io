@@ -149,7 +149,7 @@
         plane5.position.z=70;
         scene.add(plane5);
 
-        var planeGeometry4 = new THREE.PlaneGeometry( 600, 300, 20);
+        var planeGeometry4 = new THREE.PlaneGeometry( 800, 300, 20);
         var plane6 = new THREE.Mesh(planeGeometry4, mat_mori);
         plane6.rotation.y=-1.57;
         plane6.position.y=20;
@@ -164,7 +164,9 @@
         plane7.position.z=30;
         scene.add(plane7);
         
-        var plane8 = new THREE.Mesh(planeGeometry1, mat_mori);
+        var planeGeometry5 = new THREE.PlaneGeometry( 400, 200, 200);
+        
+        var plane8 = new THREE.Mesh(planeGeometry5, mat_mori);
         plane8.position.y=80;
         plane8.position.z=-200;
         scene.add(plane8);
