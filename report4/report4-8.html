@@ -27,7 +27,7 @@
         // カメラを作成
         const camera = new THREE.PerspectiveCamera(45, width / height);
         // カメラの初期座標を設定
-        camera.position.set(0, -100, 600);
+        camera.position.set(0, -100, 500);
 
         // カメラコントローラーを作成
         const controls = new THREE.OrbitControls(camera,document.body);
@@ -165,7 +165,7 @@
         scene.add(plane7);
         
         var plane8 = new THREE.Mesh(planeGeometry1, mat_mori);
-        plane8.position.y=50;
+        plane8.position.y=80;
         plane8.position.z=-200;
         scene.add(plane8);
         
