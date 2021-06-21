@@ -47,6 +47,12 @@
         directionalLight3.position.set(0, 0, 1000);
         // シーンに追加
         scene.add(directionalLight3);
+        // 平行光源4
+        var directionalLight4 = new THREE.DirectionalLight(0xffffff);
+        directionalLight4.position.set(0, 1000, 0);
+        // シーンに追加
+        scene.add(directionalLight4);
+        
         
 
         // テクスチャー読み込み
