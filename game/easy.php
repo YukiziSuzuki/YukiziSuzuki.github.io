@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>無題ドキュメント</title>
+<link href="sample.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	<?php
+	$com = $_GET['rand'];
+	echo $com;
+	?>
+	
+	<p></p>
+	<div class="number">
+		<p>COM</p>
+		<li><img src="../picture/number/10.png" width="100" height="100" alt=""/></li>
+		<li><img src="../picture/number/10.png" width="100" height="100" alt=""/></li>
+	</div>
+	<p></p>
+	
+	<div class="number">
+		<p>YOU</p>
+		<?php
+		if(isset($_GET['ten']) && isset($_GET['one']) && isset($_GET['result']) && isset($_GET['challenge'])){
+			$ten = $_GET['ten'];
+			$one = $_GET['one']; 
+			$result = $_GET['result'];
+			$challenge_a = $_GET['challenge']; ?>
+			<li><img src="../picture/number/<?php echo $ten; ?>.png" width="100" height="100" alt=""/></li>
+			<li><img src="../picture/number/<?php echo $one; ?>.png" width="100" height="100" alt=""/></li>
+			<li><img src="../picture/number/<?php echo $result; ?>.png" width="300" height="100" alt=""/></li>
+		<?php }else{ ?>
+		<?php $challenge_a = 0; ?>
+			<li><img src="../picture/number/10.png" width="100" height="100" alt=""/></li>
+			<li><img src="../picture/number/10.png" width="100" height="100" alt=""/></li>
+		<?php } ?>
+	</div>
+	
+	<?php $challenge = (int)$challenge_a + 1;?>
+	
+	<form action="result.php" method="get">
+	
+	<div class="sentaku">
+		<li><p>拾之位</p>
+		<select name="zilyu">
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+			<option value="6">6</option>
+			<option value="7">7</option>
+			<option value="8">8</option>
+			<option value="9">9</option>
+			<option value="0">0</option>	
+		</select></li>
+	
+		<li><p>壱之位</p>
+	<select name="iti">
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+			<option value="6">6</option>
+			<option value="7">7</option>
+			<option value="8">8</option>
+			<option value="9">9</option>
+			<option value="0">0</option>
+		</select></li>
+	</div>
+	<p>　</p>
+	<p>　</p>
+	
+	<div class="Challenge">	
+		
+		<input type="hidden" name="com" value=<?php echo $com; ?>>
+		<input type="hidden" name="challenge" value=<?php echo $challenge ?>>
+
+		<input type="submit"  value="挑戦" class="botan">
+	
+	</form>
+	</div>
+	
+	
+</body>
+</html>
