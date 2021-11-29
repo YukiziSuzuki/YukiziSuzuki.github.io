@@ -1,0 +1,165 @@
+@charset "utf-8";
+
+/*メニューバー*/
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #1b2538;
+}
+li {
+	float: left;
+	border-right: 1px solid #bbbbbb;
+}
+li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+li a:hover:not(.active) {
+	background-color: #a9bce2;
+}
+.active {
+	background-color: #da3c41;
+}
+
+/*背景*/
+body {
+    background-color: #A0A0A0;
+}
+
+
+/*ページトップのアイコン*/
+.aikon .aikon .aikon {
+	border-right: none;
+}
+.aikon .aikon {
+	background-color: #A0A0A0;
+}
+
+/*メニュー蘭より下にある部分のデザイン（料理のメニュー以外）*/
+.bigbox {
+    width: 100%;
+    height: 100%;
+    margin-top: 30px;
+}
+
+/*画像の大きさ*/
+.bigbox .gazou {
+	width: 50%;
+    float: left;
+}
+
+/*店名の枠組み*/
+.bigbox .mozi {
+    width: 40%;
+    float: left;
+    height: 100%;
+    padding: 0.5em 1em;
+    border-left: double 10px #29A53E;
+    border-right: 10px double #29A53E;
+    margin-left: 30px;
+}
+
+
+.bigbox .mozi li{
+		border-right: none;
+}
+
+/*ホームページのモットー文字のデザイン*/
+.bigbox .mozi h1 {
+    text-align: center;
+    color: #FF0000;
+    font-size: 550%;
+    width: 100%;
+}
+/*料理のメニュー以外の説明*/
+.bigbox .mozi p {
+    text-align: center;
+    font-size: 250%;
+    width: 100%;
+}
+/*店へのアクセスの大文字*/
+.bigbox .mozi h2 {
+    text-align: center;
+    font-size: 250%;
+    width: 100%;
+	color: #FF0000;
+}
+
+/*店へのアクセスの文字*/
+.bigbox .mozi .access p {
+	text-align: left;
+    font-size: 150%;
+    width: 100%;
+}
+
+
+
+/*indexの店名の枠組*/
+.taitl {
+    text-align: center;
+    margin: 2em auto;
+    padding: 1em;
+    width: 60%;
+    border: 20px double #50C8EF; /*太さ・線種・色*/
+    background-color: #000000; /* 背景色 */
+    border-radius: 1px; /*角の丸み*/
+}
+
+/*お店についてのビデオのデザイン*/
+.video {
+    text-align: center;
+    margin-top: 20px;
+}
+.video video{
+	width: 80%;
+}
+
+/*料理のメニューページのデザイン*/
+.box {
+    width: 30%;
+    float: left;
+    margin-right: 20px;	
+}
+
+.box .niku {
+	background-color: #A0A0A0;
+	border-right: none;
+}
+
+.box .niku li .niku1 {
+    width: 100%;
+}
+.box li {
+	border-right: none;
+}
+
+/*肉の種類*/
+.box h1 {
+    color: #FF3F00;
+    font-size: 300%;
+	text-align: center;
+}
+/*肉の説明*/
+.box .niku p {
+    font-size: x-large;
+}
+/*メニュー名*/
+.box .niku h2 {
+    font-size: xx-large;
+}
+/*肉の種類の枠組み*/
+.box .nikumei {
+	margin: 2em auto;
+	padding: 1em;
+	width: 90%;
+	color: #666666; /*文字色*/
+	border: 5px solid #996633; /*線の太さ・色*/
+	border-radius: 20px; /*角の丸み*/	
+}
+
+
